@@ -1,6 +1,12 @@
+'''
 
+--- Advent of Code 2023 ---
 
-import os
+Day 06: Camel Cards
+https://adventofcode.com/2023/day/7
+
+'''
+
 from collections import Counter
 from functools import cmp_to_key
 
@@ -10,7 +16,13 @@ class CamelCards:
     
     def __init__(self, data: str) -> None:
         self.input = open(data).read().splitlines()
-        
+    
+    # Compare which of the hand has a stronger hand type.
+    # Returning 1 enables it to move further in the list when
+    # used as a key by sorted().
+    # We use most_common() here because the hand with
+    # the largest first element will equal to a stronger
+    # hand type. 
     def compare_types(self, hand1: tuple, hand2: tuple) -> int:
         
         hand1 = Counter(hand1[0]).most_common()
@@ -24,6 +36,9 @@ class CamelCards:
             
         return 0
     
+    # Compare each cards of the hands with the given card
+    # strengths. This is used when the hands have the same
+    # hand type.
     def compare_card(self, hand1: tuple, hand2: tuple) -> int:
         
         if self.compare_types(hand1, hand2) != 0:
@@ -37,6 +52,10 @@ class CamelCards:
         
         return 0
     
+    # Using the Counter from collections, we generate a dictionary
+    # without the J card so that we can get the most common card
+    # in the hand. The most common card will of course have the largest
+    # value which is why we use max() with key of dict.get.
     def check_wildcard(self, hand: tuple) -> tuple:
         
         if hand[0] == 'JJJJJ':
@@ -75,12 +94,13 @@ class CamelCards:
         
         total = 0
         
+        # Convert the inputs into a readable format for the program.
         hands = [tuple(i.split(" ")) for i in self.input]
+        # Sort the hands using the compare_card function.
         hands = sorted(hands, key = cmp_to_key(self.compare_card))
         
         for i in range(len(hands)):
             bid = hands[i][1]
-            
             total += int(bid) * (i + 1)
         
         return total
