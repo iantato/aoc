@@ -98,8 +98,3 @@ class CamelCards:
             total += int(bid) * (i + 1)
         
         return total
-        
-x = CamelCards(os.getcwd() + "\\input\\07.txt")
-
-# print(x.compare_hands(("K9KKK", "100"), ("A4T7Q", "100")))
-print(x.total_wildcard())
