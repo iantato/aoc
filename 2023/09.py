@@ -11,7 +11,6 @@ class OasisSensor:
     
     def __init__(self, data: str) -> None:
         self.input = [list(map(int, i.split(" "))) for i in open(data).read().splitlines()]
-        self.test = open(data).read().splitlines()
     
     # Find the difference in a sequence and generate it as a list.
     def find_difference(self, val: list[int]) -> list[int]:
