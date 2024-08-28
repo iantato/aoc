@@ -7,7 +7,6 @@ https://adventofcode.com/2023/day/10
 
 '''
 
-import os
 from collections import deque, defaultdict
 
 class PipeMaze():
