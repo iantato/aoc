@@ -9,7 +9,8 @@ class CosmicExpansion:
 
     # Multiplier used for how much you want to expand the universe.
     # Keep in mind to always -1 it if multiplier != 1 because of the
-    # extra character we have in each expansion.
+    # extra character we have in each expansion. Just set the
+    # multiplier to 1 if solving Part 1.
     MULTIPLIER = 1000000 - 1
 
     def __init__(self, data: str) -> None:
