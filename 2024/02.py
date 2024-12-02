@@ -5,7 +5,6 @@
 Day 02: Historian Red-Nosed Reports
 https://adventofcode.com/2024/day/2
 
-
 '''
 
 from math import copysign
