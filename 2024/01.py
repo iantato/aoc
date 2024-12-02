@@ -15,6 +15,9 @@ class Distance:
 
     # Part 01
     def get_distance(self) -> int:
+        """
+        Part 01 Solution.
+        """
         gap = 0
         first_list = []
         second_list = []
@@ -33,6 +36,9 @@ class Distance:
 
     # Part 02
     def similarity_score(self) -> int:
+        """
+        Part 02 Solution.
+        """
         similarity = 0
         first_list = []
         second_list_counter = {}
