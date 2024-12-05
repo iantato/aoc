@@ -57,8 +57,3 @@ class WordPuzzle:
         right_diag = f'{self.lines[idy-1][idx+1]}A{self.lines[idy+1][idx-1]}'
 
         return (left_diag == 'MAS' or left_diag[::-1] == 'MAS') and (right_diag == 'MAS' or right_diag[::-1] == 'MAS')
-
-
-import os
-x = WordPuzzle(f"{os.getcwd()}\\input\\04.txt", split=True)
-print(x)
