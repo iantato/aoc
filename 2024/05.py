@@ -74,13 +74,6 @@ class PageOrder:
                 if not all(j not in rules_order[updates[i]] for j in updates[:i]):
                     updates = self.order_pages(updates, rules_order)
                     middle += updates[len(updates) // 2]
-
                     break
 
         return middle
-
-
-
-if __name__ == '__main__':
-    import os
-    print(PageOrder(os.getcwd() + '/input/05.txt', False))
